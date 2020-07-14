@@ -1,0 +1,32 @@
+#部署端口
+server:
+  port: ${port:9091}
+
+#数据库
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    password: root
+    username: root
+
+#MyBatis扫描实体
+mybatis:
+  type-aliases-package: com.huoxy.domain
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+#配置Eureka server - 注册服务
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  # 租约续约间隔时间，默认30秒。租约到期，服务时效时间，默认值90秒
+  #instance:
+    #lease-renewal-interval-in-seconds: 30
+    #lease-expiration-duration-in-seconds: 90
+
+#test
+test:
+  hello: hello-world!

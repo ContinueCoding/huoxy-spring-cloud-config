@@ -29,4 +29,4 @@ eureka:
 
 #test
 test:
-  hello: hello-world!
+  hello: hello-world!!!
